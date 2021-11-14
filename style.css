@@ -27,7 +27,8 @@ time, mark, audio, video {
     max-width: 200px;
 }
 
-#header {
+header {
+    grid-area: header;
     background: #17183b;
     padding: 0px;
     margin: 0px;
@@ -36,7 +37,8 @@ time, mark, audio, video {
     padding: 20px;
     width: 50%;
 }
-#footer {
+footer {
+    grid-area: footer;
     background: #17183b;
     padding: 20px;
     color:#ffffff;
@@ -62,24 +64,15 @@ button {
     color:#ffffff;
     text-shadow: 5px solid #17183b;
 }
-.valg {
-    width: 20%;
-}
 button:hover {
     background-color: rgb(239, 144, 58);
 }
-#header {
-    grid-area: header;
-}
-#footer {
-    grid-area: footer;
+.valg {
+    width: 20%;
 }
 #innhold {
     text-align: center;
     padding: 20px;
-    grid-area: tekst;
-}
-#quiz {
     grid-area: tekst;
 }
 
@@ -104,6 +97,7 @@ button:hover {
 }
 
 #quiz {
+    grid-area: tekst;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 100px 1fr 1fr 100px;
