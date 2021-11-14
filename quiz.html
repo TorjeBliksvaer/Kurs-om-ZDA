@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">  
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        <table id="menu">
+            <th class="valg">
+                <a href="home.html"><button>Home</button></a>
+            </th>
+            <th class="valg">
+                <a href="main.html"><button>Hva er ZDA</button></a>
+            </th>
+            <th class="valg">
+                <a href="secondry.html"><button>Forebyggende tiltak</button></a>
+            </th>
+            <th class="valg">
+                <a href="tretriary.html"><button>jpnas on da mic</button></a>
+            </th>
+            <th class="valg">
+                <a href="quiz.html"><button>Quiz</button></a>
+            </th>
+        </table>
+    </div>
+
+    <div id="quiz">
+        <p id="sprsmlTekst"></p>
+        <table id="svarAlt">
+            <td>
+                <tr class="svar">
+                    <button id="svar1" onclick="knappValg(0)" value="0"></button>
+                </tr>
+                <tr class="svar">
+                    <button id="svar2" onclick="knappValg(1)" value="1"></button>
+                </tr>
+            </td>
+            <td>
+                <tr class="svar">
+                    <button id="svar3" onclick="knappValg(2)" value="2"></button>
+                </tr>
+                <tr class="svar">
+                    <button id="svar4" onclick="knappValg(3)" value="3"></button>
+                </tr>
+            </td>
+        </table>
+        <button id="quizBtn" onclick="oppdaterQuiz()">Start</button>
+    </div>
+
+    <div id="footer">
+        <div class="credz">
+            <ul>
+                <li>
+                    Jonas Banggren
+                </li>
+                <li>
+                    Torje Bliksvær
+                </li>
+                <li>
+                    Martin Brodahl  
+                </li>
+                <li>
+                    Eirik Flaathen
+                </li>
+                <li>
+                    Martin Gigstad
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script src="quiz.js"></script>
+</html>
