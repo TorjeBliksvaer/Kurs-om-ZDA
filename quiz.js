@@ -104,7 +104,7 @@ function oppdaterQuiz() {
         document.getElementById("quizBtn").innerHTML = "Neste";
         start ++;
     // Hvis ikke start
-    } else {
+    } else if (index < 8) {
         
         if (sprsml[index].koc[sprsmlValg] === 1) {
             poeng++;
@@ -114,9 +114,15 @@ function oppdaterQuiz() {
         if (index === 8) {
             document.getElementById("quizBtn").innerHTML = "Resultater";
         }
+    } else {
+        if (sprsml[index].koc[sprsmlValg] === 1) {
+            poeng++;
+        }
+        visResultater();
+        return;
     }
 
-    svartekst.innerHTML = `Spørsmål ${index + 1} <br> ${sprsml[index].tekst}`;
+    svartekst.innerHTML = `Spørsmål ${index + 1} <br>${sprsml[index].tekst}`;
     for (var i = 0; i < 4; i++) {
         svar[i].innerHTML = sprsml[index].alt[i];
     }
@@ -132,5 +138,19 @@ function knappValg(x) {
     }
     if (x != null) {
         svar[x].style.backgroundColor = "rgb(239, 144, 58)";
+    }
+}
+
+function visResultater() {
+    svartekst.innerHTML = `Din poengsum er ${poeng} / 9.<br>`;
+
+    if (poeng <= 3) {
+        svartekst.innerHTML += `Oi! Her må det jobbes mer.`;
+    } else if (poeng <= 6) {
+        svartekst.innerHTML += `Litt mer arbeid må til.`;
+    } else if (poeng <= 8) {
+        svartekst.innerHTML += `Nesten perfekt!`;
+    } else {
+        svartekst.innerHTML += `Alt rett!`;
     }
 }
