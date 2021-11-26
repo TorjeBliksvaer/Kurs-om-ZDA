@@ -142,6 +142,7 @@ function knappValg(x) {
 }
 
 function visResultater() {
+
     svartekst.innerHTML = `Din poengsum er ${poeng} / 9.<br>`;
 
     if (poeng <= 3) {
@@ -153,4 +154,7 @@ function visResultater() {
     } else {
         svartekst.innerHTML += `Alt rett!`;
     }
+
+    knappValg(null);
 }
+

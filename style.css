@@ -49,6 +49,8 @@ footer {
 h1 {
     font-size: x-large;
     text-align: center;
+    font-weight: bold;
+    height: 50px;
 }
 th {
     text-align: center;    
@@ -80,8 +82,11 @@ button:hover {
     padding: 20px;
     grid-area: tekst;
 }
+#dragon {
+    max-height: 300px;
+}
 #hovedTxt {
-    height: 80%;
+    height: 100px;
     margin: auto;
 }
 #sprsmlTekst {
