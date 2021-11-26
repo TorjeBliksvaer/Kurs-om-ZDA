@@ -1,5 +1,6 @@
 var index = 0;
 var poeng = 0;
+var start = 0;
 var sprsmlValg;
 
 var svar = [document.getElementById("svar1"),
@@ -92,21 +93,35 @@ var sprsml =    [
                 ];
 
 function oppdaterQuiz() {
-    if (sprsml[index].koc[sprsmlValg] != 0) {
-        poeng++;
-    }
-    console.log("poeng" + poeng);
-    console.log("valg" + sprsmlValg);
-    svartekst.innerHTML = sprsml[index].tekst;
 
+    // Hvis ingen valg er gjort
+    if (sprsmlValg === null) {
+        return;
+    }
+    
+    // Hvis start
+    if (start === 0) {
+        document.getElementById("quizBtn").innerHTML = "Neste";
+        start ++;
+    // Hvis ikke start
+    } else {
+        
+        if (sprsml[index].koc[sprsmlValg] === 1) {
+            poeng++;
+        }
+
+        index ++;
+        if (index === 8) {
+            document.getElementById("quizBtn").innerHTML = "Resultater";
+        }
+    }
+
+    svartekst.innerHTML = `Spørsmål ${index + 1} <br> ${sprsml[index].tekst}`;
     for (var i = 0; i < 4; i++) {
         svar[i].innerHTML = sprsml[index].alt[i];
     }
 
     knappValg(null);
-    
-    document.getElementById("quizBtn").innerHTML = "Neste";
-    index++;
 }
 
 function knappValg(x) {
